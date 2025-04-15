@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-function Signin() {
+export default function Signin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -9,7 +9,7 @@ function Signin() {
   function handleSignin(e) {
     e.preventDefault();
     if (username && password && email) {
-      alert("Signing in ...");
+      alert(`Signing in with ${username}`);
       navigate("/home");
     } else {
       alert("Enter all the details");
@@ -19,6 +19,7 @@ function Signin() {
     <div>
       <h1>Sign Up Page</h1>
       <form onSubmit={handleSignin}>
+        {/* name */}
         <label for="username">
           Username:
           <input
@@ -30,6 +31,7 @@ function Signin() {
           />
         </label>
         <br />
+        {/* email */}
         <label for="email">
           Email:
           <input
@@ -41,6 +43,7 @@ function Signin() {
           />
         </label>
         <br />
+        {/* password */}
         <label for="pass">
           Password:
           <input
@@ -57,5 +60,3 @@ function Signin() {
     </div>
   );
 }
-
-export default Signin;

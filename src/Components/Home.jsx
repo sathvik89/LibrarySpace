@@ -1,55 +1,37 @@
-// import React, { useState } from "react";
+import Books from "./Books.jsx";
+import Search from "./Search.jsx";
 
 export default function Home() {
-  return <div>This is Home page </div>;
-  //   const [searchTerm, setSearchTerm] = useState("");
-
-  //   const latestBooks = [
-  //     { id: 1, title: "Book Title 1", author: "Author 1" },
-  //     { id: 2, title: "Book Title 2", author: "Author 2" },
-  //     { id: 3, title: "Book Title 3", author: "Author 3" },
-  //   ];
-
-  //   const handleSeatingCount = () => {
-  //     alert("Total seating capacity: 50");
-  //   };
-
-  //   const handleTemperatureTimings = () => {
-  //     alert("Temperature Timings: 9 AM - 5 PM");
-  //   };
-
-  //   return (
-  //     <div>
-  //       {/* Search Bar */}
-  //       <div>
-  //         <h2>Search for Books</h2>
-  //         <input
-  //           type="text"
-  //           placeholder="Enter book name..."
-  //           value={searchTerm}
-  //           onChange={(e) => setSearchTerm(e.target.value)}
-  //         />
-  //         <p>Searching for: {searchTerm || "Nothing yet"}</p>
-  //       </div>
-
-  //       {/* Latest Books Section */}
-  //       <div>
-  //         <h2>Latest Books</h2>
-  //         <ul>
-  //           {latestBooks.map((book) => (
-  //             <li key={book.id}>
-  //               <strong>{book.title}</strong> by {book.author}
-  //             </li>
-  //           ))}
-  //         </ul>
-  //       </div>
-
-  //       {/* Buttons */}
-  //       <div>
-  //         <button onClick={handleSeatingCount}>See Seating Count</button>
-  //         <button onClick={handleTemperatureTimings}>
-  //           See Temperature Timings
-  //         </button>
-  //       </div>
-  //     </div>
+  const d = new Date();
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+      }}
+    >
+      This is Home page
+      <Search />
+      <br />
+      Date: {`${d.getDate()} / ${d.getMonth()} / ${d.getFullYear()}`}
+      <br />
+      Day:{" "}
+      {d.getDay() == 1
+        ? "Monday"
+        : d.getDay() == 2
+        ? "Tuesday"
+        : d.getDay() == 3
+        ? "Wednesday"
+        : d.getDay() == 4
+        ? "Thursday"
+        : d.getDay() == 5
+        ? "Friday"
+        : d.getDay() == 6
+        ? "Saturday"
+        : "Sunday"}
+      <Books />
+    </div>
+  );
 }

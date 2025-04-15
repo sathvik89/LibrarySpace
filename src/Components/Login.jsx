@@ -9,10 +9,10 @@ function Login() {
   function handleSubmit(e) {
     e.preventDefault();
     if (username && password) {
-      alert("Logging in with:", { username, password });
+      alert(`Logging in with: ${username}`);
       navigate("/home");
     } else {
-      alert("Please enter the details ...");
+      alert("Please enter valid details .");
     }
   }
   return (
