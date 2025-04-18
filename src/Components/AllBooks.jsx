@@ -80,6 +80,86 @@ export default function Allbooks() {
       genre: "Historical Fiction",
       location: "Russia",
     },
+    {
+      id: 11,
+      title: "The Great Gatsby",
+      description:
+        "A novel by F. Scott Fitzgerald that explores themes of wealth, love, and the American Dream.",
+      genre: "Classic",
+      location: "New York City",
+    },
+    {
+      id: 12,
+      title: "To Kill a Mockingbird",
+      description:
+        "A novel by Harper Lee that deals with racial injustice in the Deep South.",
+      genre: "Fiction",
+      location: "Maycomb, Alabama",
+    },
+    {
+      id: 13,
+      title: "1984",
+      description:
+        "A dystopian novel by George Orwell about totalitarianism and surveillance.",
+      genre: "Science Fiction",
+      location: "London",
+    },
+    {
+      id: 14,
+      title: "Pride and Prejudice",
+      description:
+        "A romantic novel by Jane Austen that follows Elizabeth Bennet's journey to love.",
+      genre: "Romance",
+      location: "Hertfordshire, England",
+    },
+    {
+      id: 15,
+      title: "The Hobbit",
+      description:
+        "A fantasy novel by J.R.R. Tolkien about Bilbo Baggins' adventures.",
+      genre: "Fantasy",
+      location: "Middle-earth",
+    },
+    {
+      id: 16,
+      title: "The Catcher in the Rye",
+      description:
+        "A novel by J.D. Salinger that follows Holden Caulfield's experiences.",
+      genre: "Coming-of-Age",
+      location: "New York City",
+    },
+    {
+      id: 17,
+      title: "Moby Dick",
+      description:
+        "A novel by Herman Melville about Captain Ahab's quest for a white whale.",
+      genre: "Adventure",
+      location: "Nantucket",
+    },
+    {
+      id: 18,
+      title: "Brave New World",
+      description:
+        "A dystopian novel by Aldous Huxley about a futuristic society.",
+      genre: "Science Fiction",
+      location: "London",
+    },
+    {
+      id: 19,
+      title: "The Alchemist",
+      description:
+        "A novel by Paulo Coelho about a shepherd's journey to find treasure.",
+      genre: "Philosophical Fiction",
+      location: "Andalusia, Spain",
+    },
+    {
+      id: 20,
+      title: "War and Peace",
+      description:
+        "An epic novel by Leo Tolstoy about Russian society during the Napoleonic Wars.",
+      genre: "Historical Fiction",
+      location: "Russia",
+    },
   ];
 
   return (

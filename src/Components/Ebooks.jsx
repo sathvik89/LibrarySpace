@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Search from "./Search";
 
 export default function Ebook() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -35,7 +34,7 @@ export default function Ebook() {
     },
   ];
 
-  // Filter books based on the search query
+  // Filter books based on the search
   const filteredBooks = digitalBooks.filter((book) =>
     book.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -43,25 +42,20 @@ export default function Ebook() {
   return (
     <div style={styles.container}>
       <h1 style={styles.heading}>E-books Available</h1>
-      {/* Search Component */}
+
       <input
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         placeholder="Search for a book..."
       />
-      {/* Render filtered books or show a no-results message */}
+
       {filteredBooks.length > 0 ? (
         filteredBooks.map((book) => (
           <div key={book.id} style={styles.bookCard}>
             <h2 style={styles.bookTitle}>{book.name}</h2>
             <p style={styles.bookDescription}>{book.description}</p>
-            <a
-              href={book.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={styles.bookLink}
-            >
+            <a href={book.link} style={styles.bookLink}>
               Download PDF
             </a>
           </div>
