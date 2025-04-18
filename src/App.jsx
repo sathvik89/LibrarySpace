@@ -11,6 +11,7 @@ import FeedBack from "./Components/Feedback";
 export default function App() {
   const [available, setavailabe] = useState(220);
   const [reserve, setReserve] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   function handleSeat() {
     setReserve((prev) => !prev);
     setavailabe((prev) => prev - 1);
@@ -33,7 +34,12 @@ export default function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signin" element={<Signin />} />
-        <Route path="/home" element={<Home />} />
+        <Route
+          path="/home"
+          element={
+            <Home searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+          }
+        />
         <Route path="/occupancy" element={<Seating available={available} />} />
         <Route
           path="/reserveseat"

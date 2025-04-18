@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export default function PreviousButton() {
+export default function PreviousButton({ text = "Go back" }) {
   const navigate = useNavigate();
-  return <button onClick={() => navigate(-1)}>Previous page</button>;
+  return <button onClick={() => navigate(-1)}>{text}</button>;
 }

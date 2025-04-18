@@ -3,8 +3,12 @@ import Books from "./Books.jsx";
 import Search from "./Search.jsx";
 import PreviousButton from "./PreviousButton.jsx";
 import NextButton from "./NextButton.jsx";
+import Help from "./Help.jsx";
+import Ebook from "./Ebooks.jsx";
+import Allbooks from "./AllBooks.jsx";
+import Rules from "./Rules.jsx";
 
-export default function Home() {
+export default function Home({ searchQuery, setSearchQuery }) {
   const d = new Date();
   const navigate = useNavigate();
   function handleSeat() {
@@ -20,7 +24,7 @@ export default function Home() {
       }}
     >
       This is Home page
-      <Search />
+      <Search value={searchQuery} onChange={setSearchQuery} />
       <br />
       Date: {`${d.getDate()} / ${d.getMonth()} / ${d.getFullYear()}`}
       <br />
@@ -38,12 +42,16 @@ export default function Home() {
         : d.getDay() == 6
         ? "Saturday"
         : "Sunday"}
-      <Books />
-      <PreviousButton />
+      <Books searchQuery={searchQuery} />
+      <Allbooks />
+      <Ebook />
       <button onClick={handleSeat}>Occupancy</button>
+      <Rules />
       {/* <NextButton /> */}
       <p>Your feedBack matters</p>
       <button onClick={() => navigate("/feedback")}>Give Feedback</button>
+      <PreviousButton />
+      <Help />
     </div>
   );
 }
