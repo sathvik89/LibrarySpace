@@ -8,6 +8,7 @@ import Allbooks from "./AllBooks.jsx";
 import Rules from "./Rules.jsx";
 import LibraryTimings from "./LibraryTimings.jsx";
 import PresentDay from "./PresentDay.jsx";
+import News from "./News.jsx";
 
 export default function Home({ searchQuery, setSearchQuery }) {
   const navigate = useNavigate();
@@ -21,6 +22,7 @@ export default function Home({ searchQuery, setSearchQuery }) {
       <br />
       <PresentDay />
       <LibraryTimings />
+      <News />
       <Books searchQuery={searchQuery} />
       <Allbooks />
       <Ebook />
