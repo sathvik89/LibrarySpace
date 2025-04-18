@@ -3,7 +3,14 @@ import { Link, useLocation } from "react-router-dom";
 
 export default function Navi() {
   const location = useLocation();
-  const hideNavigation = ["/login", "/signin", "/home", "/occupancy"];
+  const hideNavigation = [
+    "/login",
+    "/signin",
+    "/home",
+    "/occupancy",
+    "/reserveseat",
+    "/feedback",
+  ];
   if (hideNavigation.includes(location.pathname)) {
     return null;
   }

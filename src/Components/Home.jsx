@@ -41,7 +41,9 @@ export default function Home() {
       <Books />
       <PreviousButton />
       <button onClick={handleSeat}>Occupancy</button>
-      <NextButton />
+      {/* <NextButton /> */}
+      <p>Your feedBack matters</p>
+      <button onClick={() => navigate("/feedback")}>Give Feedback</button>
     </div>
   );
 }
