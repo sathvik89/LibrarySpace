@@ -11,16 +11,19 @@ import book9Image from "../BookImages/book9.png";
 
 export default function Books() {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        height: "100%",
-        width: "100%",
-      }}
-    >
+    <div>
       <h1>Latest Collection</h1>
-      <div>
+      <div
+      // style={{
+      //   height: "100%",
+      //   width: "100%",
+      //   display: "flex",
+      //   flexDirection: "row",
+      //   justifyContent: "center",
+      //   alignItems: "center",
+      //   gap: "20px", // Adds space between items
+      // }}
+      >
         {/* 1st */}
         <Book
           title={"Zana and the bumbling genie"}

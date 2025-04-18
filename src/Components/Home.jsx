@@ -1,8 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import Books from "./Books.jsx";
 import Search from "./Search.jsx";
+import PreviousButton from "./PreviousButton.jsx";
+import NextButton from "./NextButton.jsx";
 
 export default function Home() {
   const d = new Date();
+  const navigate = useNavigate();
+  function handleSeat() {
+    navigate("/occupancy");
+  }
   return (
     <div
       style={{
@@ -32,6 +39,9 @@ export default function Home() {
         ? "Saturday"
         : "Sunday"}
       <Books />
+      <PreviousButton />
+      <button onClick={handleSeat}>Occupancy</button>
+      <NextButton />
     </div>
   );
 }
