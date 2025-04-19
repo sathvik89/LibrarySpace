@@ -4,7 +4,7 @@ export default function Search({ value, onChange }) {
     <div className={styles.mainSearch}>
       <input
         type="text"
-        placeholder="Search for a latest book..."
+        placeholder="🔎  Search for a latest book..."
         value={value}
         onChange={(e) => onChange(e.target.value)}
         style={{
