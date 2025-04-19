@@ -1,0 +1,35 @@
+.mainLibrarytime {
+  width: 100%;
+  background-color: var(--minibackground);
+  padding: 20px;
+  border-radius: var(--radius);
+}
+
+.libraryTitle {
+  color: var(--maroon-primary);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.librarytime {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.librarylist {
+  list-style-type: none;
+  margin-bottom: 1rem;
+}
+
+.librarylist li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.LibraryPara {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--black);
+  /* font-weight: bold; */
+}

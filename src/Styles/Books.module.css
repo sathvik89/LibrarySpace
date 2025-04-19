@@ -1,0 +1,50 @@
+
+.mainBooksContainer {
+  width: 100%;
+  background-color: var(--minibackground);
+  padding: 20px;
+}
+
+.heading {
+  color: var(--maroon-primary);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.BooksList {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--maroon-light) var(--grey-light);
+}
+
+.BooksList::-webkit-scrollbar {
+  height: 8px;
+}
+
+.BooksList::-webkit-scrollbar-track {
+  background: var(--grey-light);
+  border-radius: 10px;
+}
+
+.BooksList::-webkit-scrollbar-thumb {
+  background-color: var(--maroon-light);
+  border-radius: 10px;
+}
+
+.noMatch {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  color: var(--grey-dark);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+}

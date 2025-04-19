@@ -1,0 +1,70 @@
+.seatingMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+.image {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 200px;
+  height: auto;
+}
+
+.seatinginner {
+  background-color: var(--minibackground);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border: 2px solid maroon;
+  padding: 4rem;
+}
+
+.mainCount {
+  font-size: 2.5rem;
+  color: var(--maroon-primary);
+  margin-bottom: 1rem;
+}
+
+.remainCount {
+  font-size: 1.8rem;
+  color: var(--black);
+  margin-bottom: 2rem;
+}
+
+.reserveButton {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  background-color: var(--maroon-primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reserveButton:hover {
+  background-color: var(--maroon-dark);
+}
+
+@media (max-width: 768px) {
+  .mainCount {
+    font-size: 2rem;
+  }
+
+  .remainCount {
+    font-size: 1.5rem;
+  }
+
+  .image {
+    width: 60px;
+  }
+}

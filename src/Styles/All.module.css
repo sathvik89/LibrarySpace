@@ -1,0 +1,43 @@
+.containerAllbook {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--minibackground);
+}
+
+.headingAll {
+  color: var(--maroon-primary);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.bookCard {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+.bookCard:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.bookTitle {
+  font-size: 1.2rem;
+  color: var(--maroon-primary);
+  margin-bottom: 0.5rem;
+}
+
+.bookDescription {
+  font-size: 0.9rem;
+  color: var(--grey-dark);
+  margin-bottom: 0.5rem;
+}
+
+.bookDetails {
+  font-size: 0.85rem;
+  color: var(--black);
+}

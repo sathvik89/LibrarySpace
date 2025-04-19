@@ -1,11 +1,12 @@
+import styles from "../Styles/PresentDay.module.css";
 export default function PresentDay() {
   const d = new Date();
   return (
-    <div>
-      <span style={{ marginRight: "30px" }}>
+    <div className={styles.mainPresentday}>
+      <span className={styles.date}>
         Date: {`${d.getDate()} / ${d.getMonth()} / ${d.getFullYear()}`}
       </span>
-      <span>
+      <span className={styles.day}>
         Day:{" "}
         {d.getDay() == 1
           ? "Monday"

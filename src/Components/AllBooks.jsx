@@ -1,3 +1,4 @@
+import styles from "../Styles/All.module.css";
 export default function Allbooks() {
   const sampleBooks = [
     {
@@ -163,14 +164,14 @@ export default function Allbooks() {
   ];
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.heading}>All Books</h1>
+    <div className={styles.containerAllbook}>
+      <h1 className={styles.headingAll}>All Books</h1>
 
       {sampleBooks.map((book) => (
-        <div key={book.id} style={styles.bookCard}>
-          <h2 style={styles.bookTitle}>{book.title}</h2>
-          <p style={styles.bookDescription}>{book.description}</p>
-          <p style={styles.bookDetails}>
+        <div key={book.id} className={styles.bookCard}>
+          <h2 className={styles.bookTitle}>{book.title}</h2>
+          <p className={styles.bookDescription}>{book.description}</p>
+          <p className={styles.bookDetails}>
             <strong>Genre:</strong> {book.genre} | <strong>Location:</strong>{" "}
             {book.location}
           </p>
@@ -179,39 +180,3 @@ export default function Allbooks() {
     </div>
   );
 }
-const styles = {
-  container: {
-    fontFamily: "Arial, sans-serif",
-    padding: "20px",
-    backgroundColor: "#f9f9f9",
-    minHeight: "100vh",
-    margin: "30px",
-  },
-  heading: {
-    textAlign: "center",
-    color: "#333",
-    marginBottom: "30px",
-  },
-  bookCard: {
-    backgroundColor: "#fff",
-    margin: "15px auto",
-    padding: "20px",
-    maxWidth: "600px",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-    borderRadius: "8px",
-  },
-  bookTitle: {
-    fontSize: "1.5em",
-    color: "#555",
-    marginBottom: "10px",
-  },
-  bookDescription: {
-    fontSize: "1em",
-    color: "#777",
-    marginBottom: "15px",
-  },
-  bookDetails: {
-    fontSize: "0.9em",
-    color: "#555",
-  },
-};

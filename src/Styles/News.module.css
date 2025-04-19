@@ -1,0 +1,32 @@
+.newsMain {
+  width: 100%;
+  background-color: var(--minibackground);
+  padding: 20px;
+  border-radius: var(--radius);
+}
+
+.titleNews {
+  color: var(--maroon-primary);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.newsToday {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.newsReadMore {
+  font-size: 0.9rem;
+}
+
+.newsReadMore a {
+  color: var(--maroon-primary);
+  font-weight: 600;
+}
+
+.newsReadMore a:hover {
+  text-decoration: underline;
+}

@@ -1,18 +1,20 @@
 import { useState } from "react";
 import PreviousButton from "./PreviousButton";
-
+import styles from "../Styles/Feedback.module.css";
+import RU from "../BookImages/RUimage.png";
 export default function FeedBack() {
   const [feed, setFeed] = useState(false);
   function handleSubmit() {
     setFeed((prev) => !prev);
   }
   return (
-    <div>
-      Feedback form
+    <div className={styles.feedbackContainer}>
+      <img src={RU} className={styles.feedImage} alt="" />
+      <h1 className={styles.titlefeed}>Feedback form</h1>
       {feed ? (
-        <h1>thankyou for your feedback</h1>
+        <h1 style={{ marginBottom: "20px" }}>Thankyou for your feedback 🙏🏻</h1>
       ) : (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={styles.formFeedback}>
           <div>
             <label htmlFor="name">Your Name:</label>
             <input type="text" id="name" name="name" required />
@@ -63,7 +65,9 @@ export default function FeedBack() {
               required
             ></textarea>
           </div>
-          <button type="submit">Submit</button>
+          <button className={styles.FeedbackSubmit} type="submit">
+            Submit
+          </button>
         </form>
       )}
       <PreviousButton text={"Go back"} />

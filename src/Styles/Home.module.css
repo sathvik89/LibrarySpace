@@ -1,0 +1,214 @@
+:root {
+  --maroon-primary: #800000;
+  --white: #ffffff;
+  --radius: 8px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.maincontainer {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.mainHeading {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+  font-weight: 900;
+  background-color: #800000;
+}
+/* .logoAndSearch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.homeImage {
+  width: 150px;
+  height: auto;
+  margin-bottom: 40px;
+} */
+/* .homeImage {
+  position: absolute;
+  top: 7.5rem;
+  left: 7rem;
+  width: 150px;
+  height: auto;
+} */
+
+.searchbar {
+  grid-column: 1 / -1;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+/* .date {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  padding: 20px;
+} */
+/* </div>
+<div className={styles.date}> */
+
+.librarytime {
+  grid-column: 1 / 7;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+.news {
+  grid-column: 7 / -1;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+.latestbooks {
+  grid-column: 1 / -1;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.allbooks {
+  grid-column: 1 / 9;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-top: 1rem;
+  max-height: 1013px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--maroon-primary) var(--grey-dark);
+}
+
+.ebooks {
+  grid-column: 9 / -1;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.population {
+  grid-column: 1 / 7;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.innerPop {
+  background-color: var(--minibackground);
+  padding: 90px;
+  border-radius: var(--radius);
+  border: 2px solid maroon;
+}
+
+.population p {
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.population button {
+  width: 50%;
+  height: auto;
+}
+
+.rules {
+  grid-column: 7 / -1;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.feedback {
+  grid-column: 1 / 7;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.feedback p {
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.feedback button {
+  width: 50%;
+}
+
+.help {
+  grid-column: 7 / -1;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.previous {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+@media (max-width: 992px) {
+  .librarytime,
+  .news {
+    grid-column: 1 / -1;
+  }
+
+  .allbooks,
+  .ebooks {
+    grid-column: 1 / -1;
+  }
+
+  .population,
+  .rules,
+  .feedback,
+  .help {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .maincontainer {
+    padding: 1rem;
+    grid-gap: 1rem;
+  }
+
+  .mainHeading {
+    font-size: 2rem;
+  }
+}

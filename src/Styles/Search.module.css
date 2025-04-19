@@ -1,0 +1,26 @@
+.mainSearch {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.mainSearch input {
+  max-width: 500px;
+  border: 2px solid var(--grey-light);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.mainSearch input:focus {
+  border-color: var(--maroon-primary);
+  box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.2);
+}
+
+@media (max-width: 768px) {
+  .mainSearch input {
+    width: 100%;
+  }
+}

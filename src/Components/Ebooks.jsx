@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import styles from "../Styles/Ebook.module.css";
 export default function Ebook() {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -34,16 +34,16 @@ export default function Ebook() {
     },
   ];
 
-  // Filter books based on the search
   const filteredBooks = digitalBooks.filter((book) =>
     book.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.heading}>E-books Available</h1>
+    <div className={styles.container}>
+      <h1 className={styles.heading}>E-books Available</h1>
 
       <input
+        className={styles.inputStyles}
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
@@ -52,67 +52,19 @@ export default function Ebook() {
 
       {filteredBooks.length > 0 ? (
         filteredBooks.map((book) => (
-          <div key={book.id} style={styles.bookCard}>
-            <h2 style={styles.bookTitle}>{book.name}</h2>
-            <p style={styles.bookDescription}>{book.description}</p>
-            <a href={book.link} style={styles.bookLink}>
+          <div key={book.id} className={styles.bookCard}>
+            <h2 className={styles.bookTitle}>{book.name}</h2>
+            <p className={styles.bookDescription}>{book.description}</p>
+            <a href={book.link} className={styles.bookLink}>
               Download PDF
             </a>
           </div>
         ))
       ) : (
-        <p style={styles.noResultsMessage}>
+        <p className={styles.noResultsMessage}>
           Sorry, no book with title "{searchQuery}" is available.
         </p>
       )}
     </div>
   );
 }
-
-// Styles for the UI
-const styles = {
-  container: {
-    fontFamily: "Arial, sans-serif",
-    padding: "20px",
-    backgroundColor: "#f9f9f9",
-    minHeight: "100vh",
-  },
-  heading: {
-    textAlign: "center",
-    color: "#333",
-    marginBottom: "30px",
-  },
-  bookCard: {
-    backgroundColor: "#fff",
-    margin: "15px auto",
-    padding: "20px",
-    maxWidth: "600px",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-    borderRadius: "8px",
-  },
-  bookTitle: {
-    fontSize: "1.5em",
-    color: "#555",
-    marginBottom: "10px",
-  },
-  bookDescription: {
-    fontSize: "1em",
-    color: "#777",
-    marginBottom: "15px",
-  },
-  bookLink: {
-    display: "inline-block",
-    backgroundColor: "#007BFF",
-    color: "#fff",
-    padding: "10px 15px",
-    borderRadius: "5px",
-    textDecoration: "none",
-    fontSize: "1em",
-  },
-  noResultsMessage: {
-    textAlign: "center",
-    color: "#d9534f",
-    fontSize: "1.2em",
-    marginTop: "20px",
-  },
-};

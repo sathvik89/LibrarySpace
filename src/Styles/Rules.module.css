@@ -1,0 +1,33 @@
+.mainrule {
+  width: 100%;
+  background-color: var(--minibackground);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mainrule h1 {
+  color: var(--maroon-primary);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  letter-spacing: 0.05rem;
+}
+
+.mainrule ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.mainrule li {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  font-family: "Georgia", serif;
+}
+
+.mainrule li:last-child {
+  margin-bottom: 0;
+}

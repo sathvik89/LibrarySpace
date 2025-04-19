@@ -1,0 +1,58 @@
+.feedbackContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+.feedImage {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 200px;
+  height: auto;
+}
+.titlefeed {
+  color: var(--maroon-primary);
+}
+.formFeedback {
+  background-color: var(--minibackground);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 2px solid maroon;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem 0;
+}
+
+.formFeedback div {
+  margin-bottom: 1.5rem;
+}
+
+.formFeedback label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.formFeedback input,
+.formFeedback select,
+.formFeedback textarea {
+  width: 100%;
+}
+
+.FeedbackSubmit {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  background-color: var(--maroon-primary);
+}
+
+@media (max-width: 768px) {
+  .formFeedback {
+    padding: 1.5rem;
+  }
+}

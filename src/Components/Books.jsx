@@ -8,7 +8,7 @@ import book6Image from "../BookImages/book6.png";
 import book7Image from "../BookImages/book7.png";
 import book8Image from "../BookImages/book8.png";
 import book9Image from "../BookImages/book9.png";
-
+import styles from "../Styles/Books.module.css";
 export default function Books({ searchQuery }) {
   const books = [
     {
@@ -79,11 +79,9 @@ export default function Books({ searchQuery }) {
   );
 
   return (
-    <div>
-      <h1 style={{ textAlign: "center", marginBottom: "20px" }}>
-        Latest Collection
-      </h1>
-      <div>
+    <div className={styles.mainBooksContainer}>
+      <h1 className={styles.heading}>Latest Collection 📚</h1>
+      <div className={styles.BooksList}>
         {filteredBooks.length > 0 ? (
           filteredBooks.map((book, index) => (
             <Book
@@ -95,7 +93,9 @@ export default function Books({ searchQuery }) {
             />
           ))
         ) : (
-          <p>No books found matching "{searchQuery}".</p>
+          <p className={styles.noMatch}>
+            No books found matching "{searchQuery}".
+          </p>
         )}
       </div>
     </div>

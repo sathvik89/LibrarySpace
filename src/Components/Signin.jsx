@@ -1,6 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styles from "../Styles/signin.module.css";
+import RU from "../BookImages/RUimage.png";
+import PreviousButton from "./PreviousButton";
 export default function Signin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -16,10 +19,10 @@ export default function Signin() {
     }
   }
   return (
-    <div>
-      <h1>Sign Up Page</h1>
-      <form onSubmit={handleSignin}>
-        {/* name */}
+    <div className={styles.mainsignin}>
+      <img src={RU} alt="" className={styles.imageSign} />
+      <h1 className={styles.signuptitle}>Sign Up Page</h1>
+      <form onSubmit={handleSignin} className={styles.formSign}>
         <label for="username">
           Username:
           <input
@@ -31,7 +34,7 @@ export default function Signin() {
           />
         </label>
         <br />
-        {/* email */}
+
         <label for="email">
           Email:
           <input
@@ -43,7 +46,7 @@ export default function Signin() {
           />
         </label>
         <br />
-        {/* password */}
+
         <label for="pass">
           Password:
           <input
@@ -55,8 +58,11 @@ export default function Signin() {
           />
         </label>
         <br />
-        <button type="submit">Sign Up</button>
+        <button className={styles.signinbutton} type="submit">
+          Sign Up
+        </button>
       </form>
+      <PreviousButton />
     </div>
   );
 }

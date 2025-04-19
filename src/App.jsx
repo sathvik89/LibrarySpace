@@ -7,6 +7,8 @@ import Seating from "./Components/Seating";
 import ReserveSeat from "./Components/SeatReserve";
 import { useState } from "react";
 import FeedBack from "./Components/Feedback";
+import Mainpage from "./Components/Mainpage";
+import RightsReserved from "./Components/rightsReserved";
 
 export default function App() {
   const [available, setavailabe] = useState(220);
@@ -23,15 +25,7 @@ export default function App() {
     <BrowserRouter>
       <Navi />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
-              <h1>Welcome to the Home Page</h1>
-              <p>Click on a button to Start.</p>
-            </div>
-          }
-        />
+        <Route path="/" element={<Mainpage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signin" element={<Signin />} />
         <Route
@@ -51,8 +45,8 @@ export default function App() {
           }
         />
         <Route path="/feedback" element={<FeedBack />} />
-        {/* default page  */}
       </Routes>
+      <RightsReserved />
     </BrowserRouter>
   );
 }

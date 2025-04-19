@@ -1,6 +1,7 @@
+import styles from "../Styles/Search.module.css";
 export default function Search({ value, onChange }) {
   return (
-    <div style={{ textAlign: "center", margin: "20px 0" }}>
+    <div className={styles.mainSearch}>
       <input
         type="text"
         placeholder="Search for a latest book..."

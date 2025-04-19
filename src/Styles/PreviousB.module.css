@@ -1,0 +1,12 @@
+.prevbutton {
+  padding: 0.6rem 1.5rem;
+  background-color: var(--grey-dark);
+  color: var(--white);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.prevbutton:hover {
+  background-color: var(--black);
+  transform: translateY(-2px);
+}

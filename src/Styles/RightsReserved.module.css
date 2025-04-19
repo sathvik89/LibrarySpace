@@ -1,0 +1,17 @@
+.rightsReservedContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  background-color: rgb(128, 0, 0);
+  margin-top: auto;
+}
+
+.rightsReservedText {
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 2px;
+}

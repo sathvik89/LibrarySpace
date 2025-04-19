@@ -9,32 +9,70 @@ import Rules from "./Rules.jsx";
 import LibraryTimings from "./LibraryTimings.jsx";
 import PresentDay from "./PresentDay.jsx";
 import News from "./News.jsx";
-
+import styles from "../Styles/Home.module.css";
+import RU from "../BookImages/RUimage.png";
+import Logoutbutton from "./Logoutbutton.jsx";
 export default function Home({ searchQuery, setSearchQuery }) {
+  // console.log(searchQuery, setSearchQuery);
   const navigate = useNavigate();
   function handleSeat() {
     navigate("/occupancy");
   }
   return (
-    <div>
-      This is Home page
-      <Search value={searchQuery} onChange={setSearchQuery} />
-      <br />
-      <PresentDay />
-      <LibraryTimings />
-      <News />
-      <Books searchQuery={searchQuery} />
-      <Allbooks />
-      <Ebook />
-      <div>
-        <p>Want to know how many seats are available right now ?</p>
-        <button onClick={handleSeat}>Occupancy</button>
+    <div className={styles.maincontainer}>
+      <div className={styles.mainHeading}>Library Space</div>
+      <div className={styles.searchbar}>
+        <Search value={searchQuery} onChange={setSearchQuery} />
+        <PresentDay />
       </div>
-      <Rules />
-      <p>Your feedBack matters</p>
-      <button onClick={() => navigate("/feedback")}>Give Feedback</button>
-      <Help />
-      <PreviousButton />
+      <div className={styles.librarytime}>
+        <LibraryTimings />
+      </div>
+      <div className={styles.news}>
+        <News />
+      </div>
+      <div className={styles.latestbooks}>
+        <Books searchQuery={searchQuery} />
+      </div>
+      <div className={styles.allbooks}>
+        <Allbooks />
+      </div>
+      <div className={styles.ebooks}>
+        <Ebook />
+      </div>
+      <div className={styles.population}>
+        <div className={styles.innerPop}>
+          <h3>Current Seat Availability</h3>
+
+          <p>
+            Want to know how many seats are available right now? Click the
+            button below to check the occupancy status.
+          </p>
+
+          <button onClick={handleSeat}>Check Occupancy</button>
+        </div>
+      </div>
+      <div className={styles.rules}>
+        <Rules />
+      </div>
+
+      <div className={styles.feedback}>
+        <h3>Your Feedback Matters!</h3>
+
+        <p>
+          Help us improve by sharing your thoughts. Your feedback is valuable to
+          us and helps us serve you better.
+        </p>
+
+        <button onClick={() => navigate("/feedback")}>Give Feedback</button>
+      </div>
+      <div className={styles.help}>
+        <Help />
+      </div>
+      <div className={styles.previous}>
+        <PreviousButton />
+        <Logoutbutton />
+      </div>
     </div>
   );
 }
