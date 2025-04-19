@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "../Styles/Ebook.module.css";
 export default function Ebook() {
   const [searchQuery, setSearchQuery] = useState("");
+  // dummybooksdata
 
   const digitalBooks = [
     {

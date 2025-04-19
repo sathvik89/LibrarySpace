@@ -10,6 +10,7 @@ import book8Image from "../BookImages/book8.png";
 import book9Image from "../BookImages/book9.png";
 import styles from "../Styles/Books.module.css";
 export default function Books({ searchQuery }) {
+  // dummybooks
   const books = [
     {
       title: "Zana and the bumbling genie",
