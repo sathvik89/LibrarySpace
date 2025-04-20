@@ -7,9 +7,7 @@ export default function LibraryTimings() {
   return (
     <div className={styles.mainLibrarytime}>
       <h2 className={styles.libraryTitle}>Library Timings</h2>
-      <p className={styles.librarytime}>
-        The library is open every day of the week. Here are the timings:
-      </p>
+      
       <ul className={styles.librarylist}>
         <li>
           <strong>Monday to Saturday:</strong> {weekdayTimings}

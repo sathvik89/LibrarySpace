@@ -1,5 +1,5 @@
 :root {
-  --maroon-primary: #800020;
+  --maroon-primary: rgb(178, 14, 56);
   --maroon-light: #a05060;
   --maroon-dark: #600010;
   --white: #ffffff;
@@ -17,14 +17,14 @@
   --secondary-text-color: #555555;
   --minibackground: rgb(234, 217, 217);
   /* 8000200b */
-  --app-background: #edd0b8;
+  --app-background: #ffedd2;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: " Montserrat Family";
 }
 
 body {
