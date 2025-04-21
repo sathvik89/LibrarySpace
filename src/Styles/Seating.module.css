@@ -11,8 +11,11 @@
   position: absolute;
   top: 2rem;
   right: 2rem;
-  width: 200px;
+  width: auto;
+  max-width: 200px;
   height: auto;
+  object-fit: contain;
+  animation: fadeIn 1.5s ease-out;
 }
 
 .seatinginner {
@@ -65,6 +68,6 @@
   }
 
   .image {
-    width: 60px;
+    width: 100%;
   }
 }

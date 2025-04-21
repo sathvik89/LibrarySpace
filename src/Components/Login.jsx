@@ -33,14 +33,7 @@ function Login() {
   return (
     <div className={styles.mainLogin}>
       <img
-        style={{
-          marginBottom: "15px",
-          position: "absolute",
-          top: "2rem",
-          right: "2rem",
-          width: "200px",
-          height: "auto",
-        }}
+        className={styles.imageRU}
         src={RU}
         alt=""
       />

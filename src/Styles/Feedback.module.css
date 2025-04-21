@@ -7,6 +7,7 @@
   padding: 2rem;
   animation: fadeInUp 0.6s ease-out both;
 }
+
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -22,12 +23,32 @@
   position: absolute;
   top: 2rem;
   right: 2rem;
-  width: 200px;
+  width: auto;
+  max-width: 200px;
   height: auto;
+
+  animation: fadeIn 1.5s ease-out;
 }
+
+@media (max-width: 768px) {
+  .feedImage {
+    position: static;
+    margin-top: 1rem;
+    max-width: 80%;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .formFeedback {
+    padding: 1.5rem;
+  }
+}
+
 .titlefeed {
   color: var(--maroon-primary);
 }
+
 .formFeedback {
   animation: fadeInUp 0.6s ease-out both;
   background-color: var(--minibackground);
@@ -62,10 +83,4 @@
   font-size: 1rem;
   margin-top: 1rem;
   background-color: var(--maroon-primary);
-}
-
-@media (max-width: 768px) {
-  .formFeedback {
-    padding: 1.5rem;
-  }
 }
