@@ -12,17 +12,48 @@
 }
 
 .bookCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   background-color: var(--white);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 1rem;
   margin-bottom: 1rem;
+  /* overflow: hidden; */
+  position: relative;
   transition: var(--transition);
 }
 
 .bookCard:hover {
   transform: translateX(5px);
   box-shadow: var(--shadow-hover);
+}
+
+.bookimages img {
+  width: 120px;
+  height: 160px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 2px solid rgb(113, 7, 7);
+  transition: transform 1s ease, opacity 0.3s ease;
+}
+
+.bookCard:hover .bookimages img {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.bookdesci {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2em;
+  color: var(--grey-dark);
+}
+
+.bookCard:hover .bookdesci {
+  display: flex;
 }
 
 .bookTitle {
