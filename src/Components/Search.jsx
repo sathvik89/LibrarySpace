@@ -1,20 +1,18 @@
 import styles from "../Styles/Search.module.css";
-export default function Search({ value, onChange }) {
+
+export default function Search({ value, onChange, onSearch }) {
   return (
     <div className={styles.mainSearch}>
       <input
         type="text"
-        placeholder="🔎  Search for a latest book..."
+        placeholder="🔎 Search for a book..."
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        style={{
-          padding: "10px",
-          width: "300px",
-          fontSize: "1em",
-          borderRadius: "5px",
-          border: "1px solid #ccc",
-        }}
+        className={styles.searchInput}
       />
+      <button onClick={onSearch} className={styles.searchButton}>
+        Search
+      </button>
     </div>
   );
 }
