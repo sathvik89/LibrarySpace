@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { SearchContext } from "./SearchContext"; // Adjust the path as needed
+import { useContext, useState } from "react";
+import { SearchContext } from "./SearchContext";
 import { useNavigate } from "react-router-dom";
 import Books from "./Books.jsx";
 import Search from "./Search.jsx";
@@ -12,23 +12,30 @@ import LibraryTimings from "./LibraryTimings.jsx";
 import PresentDay from "./PresentDay.jsx";
 import News from "./News.jsx";
 import styles from "../Styles/Home.module.css";
-import RU from "../BookImages/RUimage.png";
 import Logoutbutton from "./Logoutbutton.jsx";
 
 export default function Home() {
-  // Use the context to access searchQuery and setSearchQuery
-  const { searchQuery, setSearchQuery } = useContext(SearchContext);
+  const { setSearchQuery } = useContext(SearchContext);
   const navigate = useNavigate();
+  const [inputValue, setInputValue] = useState("");
 
   function handleSeat() {
     navigate("/occupancy");
+  }
+
+  function handleSearch() {
+    setSearchQuery(inputValue);
   }
 
   return (
     <div className={styles.maincontainer}>
       <div className={styles.mainHeading}>Library Space</div>
       <div className={styles.searchbar}>
-        <Search value={searchQuery} onChange={setSearchQuery} />
+        <Search
+          value={inputValue}
+          onChange={setInputValue}
+          onSearch={handleSearch}
+        />
         <PresentDay />
       </div>
       <div className={styles.librarytime}>

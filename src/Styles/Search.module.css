@@ -20,7 +20,7 @@
 }
 
 .mainSearch input::placeholder {
-  color: var(--grey-light);
+  color: black;
 }
 
 .mainSearch input:focus {

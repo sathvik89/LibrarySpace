@@ -26,7 +26,6 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      {/* Wrap the entire app with the SearchProvider */}
       <SearchProvider>
         <Navi />
         <Routes>

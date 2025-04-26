@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { SearchContext } from "./SearchContext"; 
+import { SearchContext } from "./SearchContext";
 import Book from "./Book";
 import book1Image from "../BookImages/book1.png";
 import book2Image from "../BookImages/book2.png";
@@ -15,7 +15,6 @@ import styles from "../Styles/Books.module.css";
 export default function Books() {
   const { searchQuery } = useContext(SearchContext);
 
-  // dummy books
   const books = [
     {
       title: "Zana and the bumbling genie",
@@ -80,7 +79,6 @@ export default function Books() {
     },
   ];
 
-  // filtering books based on search
   const filteredBooks = books.filter((book) =>
     book.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
