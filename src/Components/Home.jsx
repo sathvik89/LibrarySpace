@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { SearchContext } from "./SearchContext"; // Adjust the path as needed
 import { useNavigate } from "react-router-dom";
 import Books from "./Books.jsx";
 import Search from "./Search.jsx";
@@ -12,12 +14,16 @@ import News from "./News.jsx";
 import styles from "../Styles/Home.module.css";
 import RU from "../BookImages/RUimage.png";
 import Logoutbutton from "./Logoutbutton.jsx";
-export default function Home({ searchQuery, setSearchQuery }) {
-  // console.log(searchQuery, setSearchQuery);
+
+export default function Home() {
+  // Use the context to access searchQuery and setSearchQuery
+  const { searchQuery, setSearchQuery } = useContext(SearchContext);
   const navigate = useNavigate();
+
   function handleSeat() {
     navigate("/occupancy");
   }
+
   return (
     <div className={styles.maincontainer}>
       <div className={styles.mainHeading}>Library Space</div>
@@ -32,7 +38,7 @@ export default function Home({ searchQuery, setSearchQuery }) {
         <News />
       </div>
       <div className={styles.latestbooks}>
-        <Books searchQuery={searchQuery} />
+        <Books />
       </div>
       <div className={styles.allbooks}>
         <Allbooks />

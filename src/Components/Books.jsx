@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { SearchContext } from "./SearchContext"; 
 import Book from "./Book";
 import book1Image from "../BookImages/book1.png";
 import book2Image from "../BookImages/book2.png";
@@ -9,8 +11,11 @@ import book7Image from "../BookImages/book7.png";
 import book8Image from "../BookImages/book8.png";
 import book9Image from "../BookImages/book9.png";
 import styles from "../Styles/Books.module.css";
-export default function Books({ searchQuery }) {
-  // dummybooks
+
+export default function Books() {
+  const { searchQuery } = useContext(SearchContext);
+
+  // dummy books
   const books = [
     {
       title: "Zana and the bumbling genie",
@@ -74,6 +79,7 @@ export default function Books({ searchQuery }) {
       imageURL: book9Image,
     },
   ];
+
   // filtering books based on search
   const filteredBooks = books.filter((book) =>
     book.title.toLowerCase().includes(searchQuery.toLowerCase())
