@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "../Styles/Login.module.css";
 import PreviousButton from "./PreviousButton";
 import RU from "../BookImages/RUimage.png";
+import GoogleLogin from "./GoogleLogin";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -32,11 +33,7 @@ function Login() {
 
   return (
     <div className={styles.mainLogin}>
-      <img
-        className={styles.imageRU}
-        src={RU}
-        alt=""
-      />
+      <img className={styles.imageRU} src={RU} alt="" />
       <h1 className={styles.titleLogin}>Library Management System</h1>
       <form onSubmit={handleSubmit} className={styles.formLogin}>
         <label htmlFor="username">
@@ -63,6 +60,10 @@ function Login() {
           />
         </label>
         <br />
+        <div style={{ width: "100%" }}>
+          <GoogleLogin />
+        </div>
+
         {error && <p className={styles.error}>{error}</p>}
         <button className={styles.Loginsubmit} type="submit">
           Login
