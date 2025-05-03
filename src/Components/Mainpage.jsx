@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../Styles/Mainpage.module.css";
 import RU from "../BookImages/RUimage.png";
+
 export default function Mainpage() {
   return (
     <div className={styles.mainPageContainer}>
@@ -8,6 +9,7 @@ export default function Mainpage() {
       <h1 className={styles.welcomeHeading}>
         Welcome to the Library Management System
       </h1>
+
 
       <p className={styles.welcomeMessage}>
         Explore our vast collection of books, manage your account, and stay
