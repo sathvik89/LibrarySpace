@@ -28,6 +28,7 @@ export default function Signin() {
           <label for="username">
             Username:
             <input
+              placeholder="Username"
               id="username"
               type="text"
               name="username"
@@ -40,6 +41,7 @@ export default function Signin() {
           <label for="email">
             Email:
             <input
+              placeholder="Enter your email"
               id="email"
               type="email"
               name="email"
@@ -52,6 +54,7 @@ export default function Signin() {
           <label for="pass">
             Password:
             <input
+              placeholder="Set Password"
               id="pass"
               type="password"
               name="password"
