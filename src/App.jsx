@@ -11,6 +11,10 @@ import Mainpage from "./Components/Mainpage";
 import RightsReserved from "./Components/rightsReserved";
 import { SearchProvider } from "./Components/SearchContext";
 import ProfileList from "./Components/ProfileList";
+import Profile from "./Components/Profile";
+import Billings from "./Components/Billings";
+import Settings from "./Components/Settings";
+import Historyy from "./Components/History";
 
 export default function App() {
   const [available, setavailabe] = React.useState(220);
@@ -50,6 +54,10 @@ export default function App() {
           />
           <Route path="/feedback" element={<FeedBack />} />
           <Route path="/MenuList" element={<ProfileList />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/billings" element={<Billings />} />
+          <Route path="/history" element={<Historyy />} />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
         <RightsReserved />
       </SearchProvider>

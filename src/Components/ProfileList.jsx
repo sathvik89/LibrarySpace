@@ -2,9 +2,12 @@
 import styles from "../Styles/ProfileList.module.css";
 import { useContext } from "react";
 import { myMenuContext } from "./Home";
+import Navi from "./Navi";
+import { useNavigate } from "react-router-dom";
 
 export default function ProfileList() {
   const funci = useContext(myMenuContext);
+  const navigate = useNavigate();
   //   const navi = useNavigate();
   //   function handleClose() {
   //     // navi("/home");
@@ -26,10 +29,14 @@ export default function ProfileList() {
             <button onClick={funci.handleShow}>X</button>
           </div>
           <div className={styles.Quickoptions}>
-            <button>👤 Profile</button>
-            <button>💳 Billing and Payments</button>
-            <button>📚 Manage History</button>
-            <button>⚙️ Settings</button>
+            <button onClick={() => navigate("/profile")}>👤 Profile</button>
+            <button onClick={() => navigate("/billings")}>
+              💳 Billing and Payments
+            </button>
+            <button onClick={() => navigate("/history")}>
+              📚 Manage History
+            </button>
+            <button onClick={() => navigate("/settings")}>⚙️ Settings</button>
           </div>
         </div>
       </div>

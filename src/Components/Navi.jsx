@@ -12,6 +12,10 @@ export default function Navi() {
     "/reserveseat",
     "/feedback",
     "/MenuList",
+    "/profile",
+    "/billings",
+    "/history",
+    "/settings",
   ];
   if (hideNavigation.includes(location.pathname)) {
     return null;
