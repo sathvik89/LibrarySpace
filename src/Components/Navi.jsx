@@ -11,6 +11,7 @@ export default function Navi() {
     "/occupancy",
     "/reserveseat",
     "/feedback",
+    "/MenuList",
   ];
   if (hideNavigation.includes(location.pathname)) {
     return null;

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { SearchContext } from "./SearchContext";
 import { useNavigate } from "react-router-dom";
 import Books from "./Books.jsx";
@@ -15,11 +15,18 @@ import styles from "../Styles/Home.module.css";
 import Logoutbutton from "./Logoutbutton.jsx";
 import logo from "../BookImages/RULOGO.png";
 import profile from "../BookImages/ProfileIcon.png";
-
+import ProfileList from "./ProfileList.jsx";
+export const myMenuContext = createContext();
 export default function Home() {
   const { setSearchQuery } = useContext(SearchContext);
   const navigate = useNavigate();
+  const [profileOpen, setProfileOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
+  function handleShow() {
+    // navigate("/MenuList");
+    setProfileOpen((prev) => !prev);
+  }
+  console.log(profileOpen);
 
   function handleSeat() {
     navigate("/occupancy");
@@ -36,9 +43,12 @@ export default function Home() {
           <img className={styles.imagestyle} src={logo} alt="" />
         </div>
         Library Space
-        <button className={styles.buttondiv}>
+        <button onClick={handleShow} className={styles.buttondiv}>
           <img className={styles.buttonImage} src={profile} alt="" />
         </button>
+        <myMenuContext.Provider value={{ handleShow }}>
+          {profileOpen && <ProfileList />}
+        </myMenuContext.Provider>
       </div>
       <div className={styles.searchbar}>
         <Search

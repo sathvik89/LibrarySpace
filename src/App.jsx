@@ -10,6 +10,7 @@ import FeedBack from "./Components/Feedback";
 import Mainpage from "./Components/Mainpage";
 import RightsReserved from "./Components/rightsReserved";
 import { SearchProvider } from "./Components/SearchContext";
+import ProfileList from "./Components/ProfileList";
 
 export default function App() {
   const [available, setavailabe] = React.useState(220);
@@ -26,7 +27,6 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      
       <SearchProvider>
         <Navi />
         <Routes>
@@ -49,6 +49,7 @@ export default function App() {
             }
           />
           <Route path="/feedback" element={<FeedBack />} />
+          <Route path="/MenuList" element={<ProfileList />} />
         </Routes>
         <RightsReserved />
       </SearchProvider>
