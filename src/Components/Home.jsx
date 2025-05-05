@@ -13,6 +13,8 @@ import PresentDay from "./PresentDay.jsx";
 import News from "./News.jsx";
 import styles from "../Styles/Home.module.css";
 import Logoutbutton from "./Logoutbutton.jsx";
+import logo from "../BookImages/RULOGO.png";
+import profile from "../BookImages/ProfileIcon.png";
 
 export default function Home() {
   const { setSearchQuery } = useContext(SearchContext);
@@ -29,7 +31,15 @@ export default function Home() {
 
   return (
     <div className={styles.maincontainer}>
-      <div className={styles.mainHeading}>Library Space</div>
+      <div className={styles.mainHeading}>
+        <div className={styles.logoDiv}>
+          <img className={styles.imagestyle} src={logo} alt="" />
+        </div>
+        Library Space
+        <button className={styles.buttondiv}>
+          <img className={styles.buttonImage} src={profile} alt="" />
+        </button>
+      </div>
       <div className={styles.searchbar}>
         <Search
           value={inputValue}
