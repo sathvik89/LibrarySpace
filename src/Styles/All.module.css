@@ -1,7 +1,19 @@
+:root {
+  --maroon-primary: #800000;
+  --white: #ffffff;
+  --black: #000000;
+  --grey-dark: #333333;
+  --minibackground: #f9f9f9;
+  --radius: 8px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
 .containerAllbook {
   width: 100%;
   padding: 1rem;
   background-color: var(--minibackground);
+  overflow-x: auto;
 }
 
 .headingAll {
@@ -9,24 +21,27 @@
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   text-align: center;
+  white-space: nowrap;
 }
 
 .bookCard {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
+  gap: 1rem;
   background-color: var(--white);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 1rem;
   margin-bottom: 1rem;
-  /* overflow: hidden; */
-  position: relative;
-  transition: var(--transition);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 320px;
+  flex-wrap: wrap;
 }
 
 .bookCard:hover {
-  transform: translateX(5px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
 }
 
@@ -36,24 +51,21 @@
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   border: 2px solid rgb(113, 7, 7);
-  transition: transform 1s ease, opacity 0.3s ease;
+  transition: transform 0.5s ease, opacity 0.3s ease;
 }
 
 .bookCard:hover .bookimages img {
-  transform: scale(1.1);
-  opacity: 0.8;
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 .bookdesci {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 2em;
   color: var(--grey-dark);
-}
-
-.bookCard:hover .bookdesci {
-  display: flex;
+  flex: 1;
+  min-width: 200px;
 }
 
 .bookTitle {
@@ -71,4 +83,32 @@
 .bookDetails {
   font-size: 0.85rem;
   color: var(--black);
+}
+
+@media (max-width: 768px) {
+  .bookCard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 280px;
+  }
+
+  .bookimages img {
+    width: 100px;
+    height: 140px;
+  }
+
+  .bookdesci {
+    padding-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .bookTitle {
+    font-size: 1.1rem;
+  }
+
+  .bookDescription,
+  .bookDetails {
+    font-size: 0.85rem;
+  }
 }

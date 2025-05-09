@@ -80,7 +80,6 @@
   animation: fadeIn 1.5s ease-out;
 }
 
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -101,7 +100,6 @@
   }
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .titleLogin {
     font-size: 2rem;

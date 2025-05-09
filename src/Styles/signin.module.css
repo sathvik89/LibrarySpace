@@ -59,12 +59,17 @@
   margin-bottom: 1.5rem;
   display: block;
   width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .formSign input:focus {
   transform: scale(1.02);
   box-shadow: 0 0 8px rgba(128, 0, 0, 0.3);
+  outline: none;
 }
 
 .imageSign {
@@ -83,7 +88,11 @@
   padding: 0.75rem;
   font-size: 1rem;
   margin-top: 1rem;
+  color: #fff;
   background-color: var(--maroon-primary);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -99,5 +108,42 @@
 
   .formSign {
     padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .imageSign {
+    top: 1rem;
+    right: 1rem;
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainsignin {
+    padding: 1rem;
+  }
+
+  .signuptitle {
+    font-size: 1.6rem;
+  }
+
+  .formSign {
+    padding: 1rem;
+  }
+
+  .formSign input {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .signinbutton {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .imageSign {
+    top: 0.5rem;
+    right: 0.5rem;
+    max-width: 100px;
   }
 }
