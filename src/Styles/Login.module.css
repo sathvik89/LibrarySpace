@@ -26,6 +26,7 @@
   max-width: 400px;
   animation: fadeIn 1s ease-out;
 }
+
 .formLogin label {
   display: block;
   margin-bottom: 0.5rem;
@@ -37,12 +38,17 @@
   margin-bottom: 1.5rem;
   display: block;
   width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .formLogin input:focus {
   transform: scale(1.01);
   box-shadow: 0 0 6px rgba(128, 0, 0, 0.3);
+  outline: none;
 }
 
 .Loginsubmit {
@@ -50,9 +56,19 @@
   padding: 0.75rem;
   font-size: 1rem;
   margin-top: 1rem;
+  color: #fff;
   background-color: var(--maroon-primary);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
+
+.Loginsubmit:hover {
+  background-color: var(--maroon-dark);
+  animation: scaleUp 0.2s ease-in-out;
+}
+
 .imageRU {
   position: absolute;
   top: 2rem;
@@ -63,10 +79,8 @@
   object-fit: contain;
   animation: fadeIn 1.5s ease-out;
 }
-.Loginsubmit:hover {
-  background-color: var(--maroon-dark);
-  animation: scaleUp 0.2s ease-in-out;
-}
+
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -87,6 +101,7 @@
   }
 }
 
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .titleLogin {
     font-size: 2rem;
@@ -94,5 +109,36 @@
 
   .formLogin {
     padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .imageRU {
+    top: 1rem;
+    right: 1rem;
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainLogin {
+    padding: 1rem;
+  }
+
+  .titleLogin {
+    font-size: 1.6rem;
+  }
+
+  .formLogin {
+    padding: 1rem;
+  }
+
+  .formLogin input {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .Loginsubmit {
+    font-size: 0.9rem;
+    padding: 0.6rem;
   }
 }
