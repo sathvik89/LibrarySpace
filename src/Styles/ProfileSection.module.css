@@ -1,0 +1,140 @@
+.mainContainer {
+  min-height: 94.64vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  color: var(--white);
+}
+
+.logoContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.logo {
+  width: 140px;
+  height: auto;
+}
+
+.profileCard {
+  background-color: var(--app-background);
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid maroon;
+  align-items: center;
+}
+
+.profileHeader {
+  background-color: var(--maroon-primary);
+  color: var(--white);
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.profileIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.profileTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.nameSection {
+  margin: 1rem 0;
+  font-size: 1.25rem;
+  color: var(--maroon-dark);
+  font-weight: 600;
+}
+
+.infoSection {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.infoItem {
+  background-color: var(--maroon-primary);
+  color: var(--white);
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.label {
+  font-weight: 500;
+}
+.editButton {
+  align-self: flex-end;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1.25rem;
+  background-color: var(--app-background);
+  color: var(--maroon-dark);
+  font-weight: 500;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--maroon-dark);
+}
+
+.editButton:hover {
+    color: var(--white);
+  background-color: var(--maroon-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.backButtonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 1rem 0;
+  font-size: 0.85rem;
+  color: var(--secondary-text-color);
+  text-align: center;
+}
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+  .profileCard {
+    padding: 2rem;
+  }
+
+  .profileTitle {
+    font-size: 2rem;
+  }
+
+  .nameSection {
+    font-size: 1.5rem;
+  }
+
+  .infoItem {
+    font-size: 1rem;
+  }
+}
