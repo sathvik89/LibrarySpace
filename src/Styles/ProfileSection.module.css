@@ -7,6 +7,47 @@
   padding: 1.5rem;
   color: var(--white);
 }
+.buttonGroup {
+    display: flex;
+  flex-wrap: wrap; /* For small screens */
+  gap: 1rem;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* .editButton, */
+.goBackButton {
+   margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.editButton {
+    align-self: flex-end;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1.25rem;
+  background-color: var(--app-background);
+  color: var(--maroon-dark);
+  font-weight: 500;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--maroon-dark);
+}
+
+.goBackButton {
+  background-color: var(--grey-dark);
+  transform: translateY(-2px);
+}
+
 
 .logoContainer {
   width: 100%;
@@ -84,19 +125,6 @@
 
 .label {
   font-weight: 500;
-}
-.editButton {
-  align-self: flex-end;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  padding: 0.5rem 1.25rem;
-  background-color: var(--app-background);
-  color: var(--maroon-dark);
-  font-weight: 500;
-  border-radius: var(--radius);
-  transition: var(--transition);
-  box-shadow: var(--shadow);
-  border: 1px solid var(--maroon-dark);
 }
 
 .editButton:hover {

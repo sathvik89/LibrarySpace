@@ -48,13 +48,15 @@ export default function Profile() {
             <span className={styles.label}>Address:</span> {address}
           </div>
         </div>
+<div className={styles.buttonGroup}>
+   <button className={styles.goBackButton} onClick={() => navi("/home")}>
+    Go back
+  </button>
+  <button className={styles.editButton} onClick={handleEdit}>
+    Edit profile
+  </button>
+</div>
 
-        <button className={styles.editButton} onClick={handleEdit}>
-          Edit profile
-        </button>
-        <div className={styles.backButtonContainer}>
-          <PreviousButton />
-        </div>
       </div>
     </div>
   );
