@@ -2,12 +2,25 @@ import logo from "../BookImages/RUimage.png";
 import icon from "../BookImages/ProfileIcon.png";
 import styles from "../Styles/ProfileSection.module.css";
 import PreviousButton from "./PreviousButton";
-import { useState } from "react";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { profileDetails } from "../context/ProfileContext";
 
 export default function Profile() {
-  const [phone, setPhone] = useState("+91 9347868783");
-  const [email,setEmail] = useState("k*****@gmail.com");
-  const [address,setAddress] = useState("Hyderabad")
+  const {name,phone,email,address} = useContext(profileDetails)
+  const navi = useNavigate();
+  function handleEdit() {
+    navi("/profileEdit");
+  }
+  // function handlePhoneChange(e) {
+  //   setPhone(e.target.value);
+  // }
+  // function handleEmailChange(e) {
+  //   setEmail(e.target.value);
+  // }
+  // function handleAddressChange(e) {
+  //   setAddress(e.target.value);
+  // }
 
   return (
     <div className={styles.mainContainer}>
@@ -21,7 +34,7 @@ export default function Profile() {
           <h2 className={styles.profileTitle}>Profile</h2>
         </div>
 
-        <div className={styles.nameSection}>Sathvik Koriginja</div>
+        <div className={styles.nameSection}>{name}</div>
 
         <div className={styles.infoSection}>
           <div className={styles.infoItem}>
@@ -36,7 +49,9 @@ export default function Profile() {
           </div>
         </div>
 
-        <button className={styles.editButton}>Edit profile</button>
+        <button className={styles.editButton} onClick={handleEdit}>
+          Edit profile
+        </button>
         <div className={styles.backButtonContainer}>
           <PreviousButton />
         </div>

@@ -15,6 +15,8 @@ import Profile from "./Components/Profile";
 import Billings from "./Components/Billings";
 import Settings from "./Components/Settings";
 import Historyy from "./Components/History";
+import ProfileEdit from "./Components/ProfileEdit";
+import ProfileContext from "./context/ProfileContext";
 
 export default function App() {
   const [available, setavailabe] = React.useState(220);
@@ -33,32 +35,37 @@ export default function App() {
     <BrowserRouter>
       <SearchProvider>
         <Navi />
-        <Routes>
-          <Route path="/" element={<Mainpage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signin" element={<Signin />} />
+        <ProfileContext>
+          <Routes>
+            <Route path="/" element={<Mainpage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signin" element={<Signin />} />
 
-          <Route path="/home" element={<Home />} />
-          <Route
-            path="/occupancy"
-            element={<Seating available={available} />}
-          />
-          <Route
-            path="/reserveseat"
-            element={
-              <ReserveSeat
-                reserve={reserve}
-                onClick={(handleSeatcount, handleSeat)}
-              />
-            }
-          />
-          <Route path="/feedback" element={<FeedBack />} />
-          <Route path="/MenuList" element={<ProfileList />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/billings" element={<Billings />} />
-          <Route path="/history" element={<Historyy />} />
-          <Route path="/settings" element={<Settings />} />
-        </Routes>
+            <Route path="/home" element={<Home />} />
+            <Route
+              path="/occupancy"
+              element={<Seating available={available} />}
+            />
+            <Route
+              path="/reserveseat"
+              element={
+                <ReserveSeat
+                  reserve={reserve}
+                  onClick={(handleSeatcount, handleSeat)}
+                />
+              }
+            />
+            <Route path="/feedback" element={<FeedBack />} />
+            <Route path="/MenuList" element={<ProfileList />} />
+
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/profileEdit" element={<ProfileEdit />} />
+
+            <Route path="/billings" element={<Billings />} />
+            <Route path="/history" element={<Historyy />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
+        </ProfileContext>
         <RightsReserved />
       </SearchProvider>
     </BrowserRouter>

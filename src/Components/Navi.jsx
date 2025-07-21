@@ -16,6 +16,7 @@ export default function Navi() {
     "/billings",
     "/history",
     "/settings",
+    "/profileEdit",
   ];
   if (hideNavigation.includes(location.pathname)) {
     return null;
