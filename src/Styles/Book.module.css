@@ -5,16 +5,17 @@
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 1rem;
-  transition: var(--transition);
+  transition: box-shadow 0.3s, transform 0.2s;
   display: flex;
   flex-direction: column;
   height: 450px;
-  overflow: scroll;
+  overflow: hidden;
+  position: relative;
 }
 
 .mainBook:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(128,0,0,0.18);
 }
 
 .bookTitle {
@@ -22,8 +23,10 @@
   color: var(--maroon-primary);
   margin-bottom: 0.75rem;
   height: 3.5rem;
-  -webkit-box-orient: vertical;
-  overflow: scroll;
+
+  /* overflow: auto; */
+  text-overflow: ellipsis;
+  font-weight: bold;
 }
 
 .Imagestyle {
@@ -32,18 +35,27 @@
   object-fit: cover;
   border-radius: var(--radius);
   margin-bottom: 0.75rem;
+  box-shadow: 0 2px 8px rgba(128,0,0,0.07);
 }
 
 .bookDesci {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--grey-dark);
   flex-grow: 1;
-  overflow: scroll;
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+
+  overflow: auto;
+  scrollbar-width: thin;
+  /* scrollbar-color: var(--maroon-light) var(--grey-light); */
+  scroll-behavior: smooth;
+  text-overflow: ellipsis;
 }
 
 .bookLocat {
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
   color: var(--maroon-primary);
   font-weight: 600;
+  letter-spacing: 0.5px;
 }

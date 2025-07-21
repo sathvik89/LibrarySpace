@@ -5,6 +5,7 @@ import styles from "../Styles/Login.module.css";
 import PreviousButton from "./PreviousButton";
 import RU from "../BookImages/RUimage.png";
 import GoogleLogin from "./GoogleLogin";
+import { toast } from 'react-hot-toast';
 export const textContext = createContext();
 function Login() {
   const [username, setUsername] = useState("");
@@ -21,13 +22,13 @@ function Login() {
     e.preventDefault();
     if (username && password) {
       if (validCredentials[username] === password) {
-        alert(`Logging in as: ${username}`);
+        toast.success(`Logged in as: ${username}`);
         navigate("/home");
       } else {
-        setError("Invalid username or password.");
+        toast.error("Invalid username or password.");
       }
     } else {
-      setError("Please enter both username and password.");
+      toast.error("Please enter both username and password.");
     }
   }
 
@@ -66,7 +67,7 @@ function Login() {
           </div>
         </textContext.Provider>
 
-        {error && <p className={styles.error}>{error}</p>}
+        {/* {error && <p className={styles.error}>{error}</p>} */}
         <button className={styles.Loginsubmit} type="submit">
           Login
         </button>

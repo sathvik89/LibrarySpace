@@ -5,6 +5,7 @@ import styles from "../Styles/signin.module.css";
 import RU from "../BookImages/RUimage.png";
 import PreviousButton from "./PreviousButton";
 import GoogleLogin from "./GoogleLogin";
+import { toast } from 'react-hot-toast';
 export default function Signin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -13,10 +14,10 @@ export default function Signin() {
   function handleSignin(e) {
     e.preventDefault();
     if (username && password && email) {
-      alert(`Signing in with ${username}`);
+      toast.success(`Signed up as ${username}`);
       navigate("/home");
     } else {
-      alert("Enter all the details");
+      toast.error("Enter all the details");
     }
   }
   return (

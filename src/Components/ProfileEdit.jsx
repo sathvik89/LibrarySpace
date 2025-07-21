@@ -4,6 +4,7 @@ import { profileDetails } from "../context/ProfileContext";
 import styles from "../Styles/ProfileEdit.module.css";
 import logo from "../BookImages/RUimage.png";
 import icon from "../BookImages/ProfileIcon.png";
+import { toast } from 'react-hot-toast';
 
 export default function ProfileEdit() {
   const {
@@ -24,6 +25,7 @@ export default function ProfileEdit() {
   }
 
   function handleSave() {
+    toast.success("Profile updated successfully!");
     navi("/profile");
   }
 

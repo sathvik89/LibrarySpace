@@ -1,9 +1,17 @@
-// import { useState } from "react";
+import { toast } from 'react-hot-toast';
 
 import PreviousButton from "./PreviousButton";
 import styles from "../Styles/SeatReserve.module.css";
 import RU from "../BookImages/RUimage.png";
 export default function ReserveSeat({ onClick, reserve }) {
+  function handleReserve() {
+    try {
+      onClick();
+      toast.success("Seat reserved successfully!");
+    } catch (e) {
+      toast.error("Failed to reserve seat.");
+    }
+  }
   return (
     <div className={styles.mainreserve}>
       <img src={RU} alt="" className={styles.imagemin} />
@@ -16,7 +24,7 @@ export default function ReserveSeat({ onClick, reserve }) {
         ) : (
           <div className={styles.nonReserveTitle}>
             <p>click below to reserve ur seat !!</p>
-            <button onClick={onClick}>Reserve seat</button>
+            <button onClick={handleReserve}>Reserve seat</button>
           </div>
         )}
       </div>

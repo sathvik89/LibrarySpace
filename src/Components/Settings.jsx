@@ -6,6 +6,7 @@ import { useState, useContext } from "react";
 import { Modal, Switch } from "antd";
 import { profileDetails } from "../context/ProfileContext";
 import { useEffect } from "react";
+import { toast } from 'react-hot-toast';
 
 export default function Settings() {
   const navi = useNavigate();
@@ -20,10 +21,12 @@ export default function Settings() {
   function handleSavePass() {
     if (!newPass || !rePass) {
       setPassError("Please fill both fields");
+      toast.error("Please fill both fields");
       return;
     }
     if (newPass !== rePass) {
       setPassError("Passwords do not match");
+      toast.error("Passwords do not match");
       return;
     }
     handlePasswordChange({ target: { value: newPass } });
@@ -31,6 +34,7 @@ export default function Settings() {
     setNewPass("");
     setRePass("");
     setPassError("");
+    toast.success("Password changed successfully!");
   }
   return (
     <div className={styles.mainContainer}>

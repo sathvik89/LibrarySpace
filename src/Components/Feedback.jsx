@@ -2,10 +2,13 @@ import { useState } from "react";
 import PreviousButton from "./PreviousButton";
 import styles from "../Styles/Feedback.module.css";
 import RU from "../BookImages/RUimage.png";
+import { toast } from 'react-hot-toast';
 export default function FeedBack() {
   const [feed, setFeed] = useState(false);
-  function handleSubmit() {
+  function handleSubmit(e) {
+    e.preventDefault();
     setFeed((prev) => !prev);
+    toast.success("Thank you for your feedback!");
   }
   return (
     <div className={styles.feedbackContainer}>

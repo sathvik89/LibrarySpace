@@ -3,6 +3,7 @@ import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import { textContext } from "./Login";
+import { toast } from 'react-hot-toast';
 const GoogleLogin = ({ textu }) => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
@@ -11,11 +12,11 @@ const GoogleLogin = ({ textu }) => {
     signInWithPopup(auth, provider)
       .then((res) => {
         setUser(res.user);
-        console.log("Logged in:", res.user);
+        toast.success("Google login successful!");
         navigate("/home");
       })
       .catch((err) => {
-        console.log("Login error:", err.message);
+        toast.error("Google login failed: " + err.message);
       });
   };
   const text = useContext(textContext);
