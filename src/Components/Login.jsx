@@ -72,7 +72,7 @@ function Login() {
         </button>
       </form>
       <div style={{ marginTop: "20px" }}>
-        <PreviousButton />
+        <PreviousButton navi={"/"} />
       </div>
     </div>
   );

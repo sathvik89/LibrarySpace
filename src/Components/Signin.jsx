@@ -69,7 +69,7 @@ export default function Signin() {
         </form>
         <GoogleLogin textu="Sign up with" />
       </div>
-      <PreviousButton />
+      <PreviousButton navi={"/"} />
     </div>
   );
 }

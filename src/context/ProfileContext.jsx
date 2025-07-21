@@ -9,6 +9,7 @@ const ProfileContext = ({children}) => {
     const [phone, setPhone] = useState("+91 9347868783");
     const [email, setEmail] = useState("k*****@gmail.com");
     const [address, setAddress] = useState("Hyderabad");
+    const [password, setPassword] = useState("password_Dummy_123"); //for settings page
     function handlePhoneChange(e){
         setPhone(e.target.value)
     }
@@ -21,8 +22,11 @@ const ProfileContext = ({children}) => {
     function handleNameChange(e){
         Setname(e.target.value)
     }
+    function handlePasswordChange(e) {
+        setPassword(e.target.value);
+    }
     const contextValues ={
-        name,phone,email,address,handlePhoneChange,handleEmailChange,handleAddresschange,handleNameChange
+        name,phone,email,address,password,handlePhoneChange,handleEmailChange,handleAddresschange,handleNameChange,handlePasswordChange
     }
   return (
     <profileDetails.Provider value={contextValues}>

@@ -103,7 +103,7 @@ export default function Home() {
         <Help />
       </div>
       <div className={styles.previous}>
-        <PreviousButton />
+        <PreviousButton  navi={"/login"} />
         <Logoutbutton />
       </div>
     </div>

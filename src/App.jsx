@@ -17,6 +17,10 @@ import Settings from "./Components/Settings";
 import Historyy from "./Components/History";
 import ProfileEdit from "./Components/ProfileEdit";
 import ProfileContext from "./context/ProfileContext";
+import AccountSettings from "./Components/AccountSettings";
+import SubscriptionDetails from "./Components/SubscriptionDetails";
+import Notifications from "./Components/Notifications";
+import PrivacyPassword from "./Components/PrivacyPassword";
 
 export default function App() {
   const [available, setavailabe] = React.useState(220);
@@ -64,6 +68,10 @@ export default function App() {
             <Route path="/billings" element={<Billings />} />
             <Route path="/history" element={<Historyy />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/settings/account" element={<AccountSettings />} />
+            <Route path="/settings/subscription" element={<SubscriptionDetails />} />
+            <Route path="/settings/notifications" element={<Notifications />} />
+            <Route path="/settings/privacy" element={<PrivacyPassword />} />
           </Routes>
         </ProfileContext>
         <RightsReserved />

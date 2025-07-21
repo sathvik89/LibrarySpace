@@ -17,6 +17,10 @@ export default function Navi() {
     "/history",
     "/settings",
     "/profileEdit",
+    "/settings/account",
+    "/settings/subscription",
+    "/settings/notifications",
+    "/settings/privacy",
   ];
   if (hideNavigation.includes(location.pathname)) {
     return null;
