@@ -16,12 +16,14 @@ import Logoutbutton from "./Logoutbutton.jsx";
 import logo from "../BookImages/RULOGO.png";
 import profile from "../BookImages/ProfileIcon.png";
 import ProfileList from "./ProfileList.jsx";
+import { useAuth } from "../context/AuthContext";
 export const myMenuContext = createContext();
 export default function Home() {
   const { setSearchQuery } = useContext(SearchContext);
   const navigate = useNavigate();
   const [profileOpen, setProfileOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
+  const { user } = useAuth();
   function handleShow() {
     // navigate("/MenuList");
     setProfileOpen((prev) => !prev);

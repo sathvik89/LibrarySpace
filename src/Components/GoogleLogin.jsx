@@ -4,22 +4,27 @@ import { auth, provider } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import { textContext } from "./Login";
 import { toast } from 'react-hot-toast';
-const GoogleLogin = ({ textu }) => {
-  const [user, setUser] = useState(null);
-  const navigate = useNavigate();
+import { useAuth } from "../context/AuthContext";
 
-  const handleGoogleLogin = () => {
-    signInWithPopup(auth, provider)
-      .then((res) => {
-        setUser(res.user);
-        toast.success("Google login successful!");
-        navigate("/home");
-      })
-      .catch((err) => {
-        toast.error("Google login failed: " + err.message);
-      });
-  };
+const GoogleLogin = ({ textu }) => {
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const { user } = useAuth();
   const text = useContext(textContext);
+
+  const handleGoogleLogin = async () => {
+    setLoading(true);
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const googleUser = result.user;
+      toast.success(`Welcome, ${googleUser.displayName || googleUser.email}!`);
+      navigate("/home");
+    } catch (err) {
+      toast.error("Google login failed: " + err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div style={{ width: "100%", marginTop: "10px" }}>
@@ -31,8 +36,9 @@ const GoogleLogin = ({ textu }) => {
         <button
           style={{ width: "100%", padding: "12px" }}
           onClick={handleGoogleLogin}
+          disabled={loading}
         >
-          {text} {textu} Google
+          {loading ? "Signing in..." : `${text} ${textu || ''} Google`}
         </button>
       )}
     </div>

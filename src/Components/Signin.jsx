@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../Styles/signin.module.css";
@@ -6,11 +6,20 @@ import RU from "../BookImages/RUimage.png";
 import PreviousButton from "./PreviousButton";
 import GoogleLogin from "./GoogleLogin";
 import { toast } from 'react-hot-toast';
+import { useAuth } from "../context/AuthContext";
 export default function Signin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
+  const { user } = useAuth();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/home");
+    }
+  }, [user, navigate]);
+
   function handleSignin(e) {
     e.preventDefault();
     if (username && password && email) {

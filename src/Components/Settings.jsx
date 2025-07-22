@@ -7,6 +7,7 @@ import { Modal, Switch } from "antd";
 import { profileDetails } from "../context/ProfileContext";
 import { useEffect } from "react";
 import { toast } from 'react-hot-toast';
+import Logoutbutton from "./Logoutbutton";
 
 export default function Settings() {
   const navi = useNavigate();
@@ -54,7 +55,9 @@ export default function Settings() {
           <button className={styles.optionButton} onClick={() => navi("/settings/privacy")}>Privacy and password</button>
         </div>
         <div className={styles.buttonSection}>
-          <button className={styles.goBackButton} onClick={() => navi("/home")}>Go Back</button>
+        <button className={styles.goBackButton} onClick={() => navi("/home")}>Go Back</button>
+        <Logoutbutton/>
+          
         </div>
       </div>
       {/* notifications */}

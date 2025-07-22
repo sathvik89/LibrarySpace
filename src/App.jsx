@@ -21,6 +21,7 @@ import AccountSettings from "./Components/AccountSettings";
 import SubscriptionDetails from "./Components/SubscriptionDetails";
 import Notifications from "./Components/Notifications";
 import PrivacyPassword from "./Components/PrivacyPassword";
+import { AuthProvider } from "./context/AuthContext";
 
 export default function App() {
   const [available, setavailabe] = React.useState(220);
@@ -36,46 +37,48 @@ export default function App() {
   }
 
   return (
-    <BrowserRouter>
-      <SearchProvider>
-        <Navi />
-        <ProfileContext>
-          <Routes>
-            <Route path="/" element={<Mainpage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signin" element={<Signin />} />
+    <AuthProvider>
+      <BrowserRouter>
+        <SearchProvider>
+          <Navi />
+          <ProfileContext>
+            <Routes>
+              <Route path="/" element={<Mainpage />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signin" element={<Signin />} />
 
-            <Route path="/home" element={<Home />} />
-            <Route
-              path="/occupancy"
-              element={<Seating available={available} />}
-            />
-            <Route
-              path="/reserveseat"
-              element={
-                <ReserveSeat
-                  reserve={reserve}
-                  onClick={(handleSeatcount, handleSeat)}
-                />
-              }
-            />
-            <Route path="/feedback" element={<FeedBack />} />
-            <Route path="/MenuList" element={<ProfileList />} />
+              <Route path="/home" element={<Home />} />
+              <Route
+                path="/occupancy"
+                element={<Seating available={available} />}
+              />
+              <Route
+                path="/reserveseat"
+                element={
+                  <ReserveSeat
+                    reserve={reserve}
+                    onClick={(handleSeatcount, handleSeat)}
+                  />
+                }
+              />
+              <Route path="/feedback" element={<FeedBack />} />
+              <Route path="/MenuList" element={<ProfileList />} />
 
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/profileEdit" element={<ProfileEdit />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/profileEdit" element={<ProfileEdit />} />
 
-            <Route path="/billings" element={<Billings />} />
-            <Route path="/history" element={<Historyy />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/settings/account" element={<AccountSettings />} />
-            <Route path="/settings/subscription" element={<SubscriptionDetails />} />
-            <Route path="/settings/notifications" element={<Notifications />} />
-            <Route path="/settings/privacy" element={<PrivacyPassword />} />
-          </Routes>
-        </ProfileContext>
-        <RightsReserved />
-      </SearchProvider>
-    </BrowserRouter>
+              <Route path="/billings" element={<Billings />} />
+              <Route path="/history" element={<Historyy />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/settings/account" element={<AccountSettings />} />
+              <Route path="/settings/subscription" element={<SubscriptionDetails />} />
+              <Route path="/settings/notifications" element={<Notifications />} />
+              <Route path="/settings/privacy" element={<PrivacyPassword />} />
+            </Routes>
+          </ProfileContext>
+          <RightsReserved />
+        </SearchProvider>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
