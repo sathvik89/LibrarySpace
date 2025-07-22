@@ -25,14 +25,9 @@ const GoogleLogin = ({ textu }) => {
       setLoading(false);
     }
   };
-
   return (
     <div style={{ width: "100%", marginTop: "10px" }}>
-      {user ? (
-        <div>
-          <h2>Welcome, {user.displayName}</h2>
-        </div>
-      ) : (
+      {!user && (
         <button
           style={{ width: "100%", padding: "12px" }}
           onClick={handleGoogleLogin}
