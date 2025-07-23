@@ -1,8 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../firebase";
 import { useNavigate } from "react-router-dom";
-import { textContext } from "./Login";
 import { toast } from 'react-hot-toast';
 import { useAuth } from "../context/AuthContext";
 
@@ -10,7 +9,6 @@ const GoogleLogin = ({ textu }) => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { user } = useAuth();
-  const text = useContext(textContext);
 
   const handleGoogleLogin = async () => {
     setLoading(true);
@@ -33,7 +31,7 @@ const GoogleLogin = ({ textu }) => {
           onClick={handleGoogleLogin}
           disabled={loading}
         >
-          {loading ? "Signing in..." : `${text} ${textu || ''} Google`}
+          {loading ? "Signing in..." : `${textu || ''} Google`}
         </button>
       )}
     </div>

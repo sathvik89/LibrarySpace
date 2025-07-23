@@ -1,12 +1,10 @@
-import React, { createContext } from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../Styles/Login.module.css";
 import PreviousButton from "./PreviousButton";
 import RU from "../BookImages/RUimage.png";
 import GoogleLogin from "./GoogleLogin";
 import { toast } from 'react-hot-toast';
-export const textContext = createContext();
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -61,12 +59,9 @@ function Login() {
           />
         </label>
         <br />
-        <textContext.Provider value="Login with">
-          <div style={{ width: "100%" }}>
-            <GoogleLogin />
-          </div>
-        </textContext.Provider>
-
+        <div style={{ width: "100%" }}>
+          <GoogleLogin textu="Login with" />
+        </div>
         {/* {error && <p className={styles.error}>{error}</p>} */}
         <button className={styles.Loginsubmit} type="submit">
           Login
